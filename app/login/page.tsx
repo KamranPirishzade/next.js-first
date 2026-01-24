@@ -1,22 +1,20 @@
-import React from "react";
+import AcmeLogo from "@/app/ui/acme-logo";
+import LoginForm from "@/app/ui/login-form";
+import { Suspense } from "react";
 
-export default function Page() {
+export default function LoginPage() {
   return (
-    <section className="flex col-span-3 row-span-3 row-start-2 col-start-2 w-full h-full rounded-2xl text-white items-center bg-sky-950 justify-center max-w-7xl m-auto">
-      <form action="POST" className="flex flex-col  gap-2">
-        <div>
-          <label htmlFor="username" className="block">
-            Username
-          </label>
-          <input type="text" name="username" id="username" />
+    <main className="flex items-center justify-center md:h-screen">
+      <div className="relative mx-auto flex w-full max-w-[400px] flex-col space-y-2.5 p-4 md:-mt-32">
+        <div className="flex h-20 w-full items-end rounded-lg bg-blue-500 p-3 md:h-36">
+          <div className="w-32 text-white md:w-36">
+            <AcmeLogo />
+          </div>
         </div>
-        <div>
-          <label htmlFor="password" className="block">
-            Password
-          </label>
-          <input type="text" name="password" id="password" />
-        </div>
-      </form>
-    </section>
+        <Suspense>
+          <LoginForm />
+        </Suspense>
+      </div>
+    </main>
   );
 }
